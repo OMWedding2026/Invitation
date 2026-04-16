@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olivia & Megan | 4 September 2026 | Ischia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f6f0e6;
+  --ivory:#fffaf1;
+  --parchment:#e8d8c3;
+  --sand:#c8b39b;
+  --terracotta:#173f66;
+  --terracotta-dark:#0f2d4d;
+  --terracotta-pale:#d8e0e8;
+  --sage:#476987;
+  --ink:#122b47;
+  --soft:#4e6680;
+  --white:#fffaf1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#f6f0e6;
+  color:var(--ink);
+  line-height:1.7;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none;}
+section{padding:5.5rem 1.5rem}
+.container{max-width:1120px;margin:0 auto}
+.fade-in{opacity:0;transform:translateY(22px);transition:opacity .75s,transform .75s}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+.section-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.24em;color:var(--terracotta);margin-bottom:.9rem;}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:400;line-height:1.03;margin-bottom:1.2rem;}
+.section-title em{font-style:italic;color:var(--terracotta);}
+.section-intro{max-width:640px;color:var(--soft);font-size:.98rem;line-height:1.75;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.2rem 1.5rem;transition:background .35s,box-shadow .35s;}
+nav.scrolled{background:rgba(246,240,230,.92);backdrop-filter:blur(14px);box-shadow:0 6px 28px rgba(18,43,71,.07);}
+.nav-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{display:inline-flex;align-items:center;justify-content:center;width:154px;height:56px;overflow:visible;}
+.nav-logo img{width:154px;height:auto;object-fit:contain;display:block;}
+.nav-links{list-style:none;display:flex;gap:1.8rem;}
+.nav-links a{font-size:.7rem;text-transform:uppercase;letter-spacing:.18em;color:var(--soft);transition:color .2s;}
+.nav-links a:hover{color:var(--terracotta);}
+.hamburger{display:none;flex-direction:column;gap:5px;border:none;background:none;cursor:pointer;}
+.hamburger span{width:24px;height:1px;background:var(--ink);display:block;}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;text-align:center;padding:7rem 1.5rem 4rem;overflow:hidden;
+  background:
+             radial-gradient(ellipse 80% 60% at 15% 25%,rgba(23,63,102,.09) 0%,transparent 55%),
+             radial-gradient(ellipse 60% 70% at 85% 75%,rgba(200,179,155,.18) 0%,transparent 50%),
+             var(--cream);
+  background-size:auto,auto,auto;}
+.hero-card{position:relative;z-index:1;max-width:820px;width:min(100%,820px);padding:3.5rem 2.5rem;border:1px solid rgba(23,63,102,.32);background:rgba(255,250,241,.94);backdrop-filter:blur(8px);box-shadow:0 20px 70px rgba(18,43,71,.08);}
+.hero-eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.26em;color:var(--terracotta);margin-bottom:1.3rem;opacity:.8;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3.8rem,9.5vw,8.5rem);line-height:.88;font-weight:300;}
+.hero-title span{display:block;font-style:italic;color:var(--terracotta);font-size:.48em;margin:.22em 0;font-weight:300;}
+.hero-divider{display:flex;align-items:center;justify-content:center;gap:1.2rem;margin:1.6rem 0 1.4rem;}
+.hero-divider-line{flex:1;max-width:80px;height:.5px;background:var(--sand);}
+.hero-divider-dot{width:4px;height:4px;border-radius:50%;background:var(--terracotta);}
+.hero-subtitle{font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-style:italic;color:var(--soft);margin-bottom:.8rem;display:flex;align-items:center;justify-content:center;gap:.9rem;flex-wrap:wrap;}.hero-subtitle span:not(.hero-shell){display:inline-block;}.hero-shell{width:18px;height:18px;display:inline-block;opacity:.9;background:url("shell-icon.png") center/contain no-repeat;flex:0 0 auto;}
+.hero-copy{max-width:560px;margin:0 auto .35rem;color:var(--soft);font-size:.95rem;line-height:1.75;}
+.hero-actions{margin-top:2rem;display:flex;flex-direction:column;align-items:center;gap:.8rem;}
+.btn{display:inline-block;padding:.9rem 2.2rem;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;border:1px solid var(--terracotta);transition:all .28s;}
+.btn-primary{background:var(--terracotta);color:var(--white);}
+.btn-primary:hover{background:var(--terracotta-dark);border-color:var(--terracotta-dark);}
+.btn-secondary{color:var(--terracotta);background:transparent;}
+.btn-secondary:hover{background:var(--terracotta);color:var(--white);}
+.invite-note{margin-top:1.4rem;font-size:.72rem;text-transform:uppercase;letter-spacing:.2em;color:var(--soft);opacity:.5;}
+.invite-photo-wrap{margin-top:2rem;border:1px solid rgba(200,179,155,.72);background:var(--white);padding:.7rem;box-shadow:0 16px 44px rgba(18,43,71,.06);}
+.invite-photo-wrap img{width:100%;height:auto;display:block;}
+
+/* OVERVIEW PANEL - all light */
+.overview{padding-top:0;margin-top:-1rem;}
+.overview-panel{background:var(--ivory);border:1px solid rgba(200,179,155,.72);display:grid;grid-template-columns:repeat(2,1fr);}
+.overview-item{padding:1.6rem 1.5rem;border-left:1px solid rgba(200,179,155,.55);text-align:center;}
+.overview-item:first-child{border-left:none;}
+.overview-label{font-size:.66rem;text-transform:uppercase;letter-spacing:.2em;color:var(--terracotta);opacity:.7;margin-bottom:.5rem;}
+.overview-value{font-family:'Cormorant Garamond',serif;font-size:1.35rem;line-height:1.2;color:var(--ink);}
+.countdown-wrap{background:var(--parchment);border:1px solid rgba(200,179,155,.65);border-top:none;padding:1.6rem 2rem;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;}
+.cd-item{text-align:center;padding:0 1.75rem;}
+.cd-item+.cd-item{border-left:1px solid rgba(200,179,155,.5);}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--ink);line-height:1;display:block;}
+.cd-unit{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--soft);opacity:.45;margin-top:.3rem;}
+
+/* RENA */
+.ischia-section{background:#f1e7d8;}
+.rena-section{background:#e6d5bd;}
+.rena-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:3rem;align-items:start;margin-top:3.5rem;}
+.rena-body p{color:var(--soft);font-size:.97rem;line-height:1.75;margin-bottom:1.1rem;}
+.rena-gallery{display:block;margin-top:2.3rem;}.rena-illustration{display:flex;align-items:flex-end;justify-content:center;overflow:visible;margin-top:0;}.rena-illustration img{width:100%;max-width:520px;height:auto;object-fit:contain;display:block;}.rena-party-top{display:flex;align-items:flex-end;justify-content:center;margin:-5.6rem 0 2.35rem;}.rena-party-top img{width:100%;max-width:420px;height:auto;object-fit:contain;display:block;}.ischia-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:start;margin-top:1.5rem;}.ischia-copy p + p{margin-top:1rem;}.ischia-illustration{display:flex;align-items:flex-start;justify-content:center;margin-top:-4.25rem;}.ischia-illustration img{width:84%;max-width:410px;height:auto;display:block;}.rena-placeholder{padding:3rem 0 1rem;color:var(--terracotta);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-align:center;opacity:.75;}
+.rena-gallery-main,.rena-gallery-stack div{overflow:visible;position:relative;min-height:220px;background:none;border:none;}
+.rena-gallery-main{min-height:460px;}
+.rena-gallery-stack{display:none;}
+.rena-gallery-label{position:absolute;left:1rem;bottom:1rem;background:rgba(255,253,248,.9);padding:.65rem .85rem;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);}
+.rena-gallery-art::before,.rena-gallery-art::after{content:'';position:absolute;border-radius:999px;opacity:.8;}
+.rena-gallery-art::before{inset:auto 8% 14% 8%;height:36%;background:linear-gradient(180deg,rgba(23,63,102,.08),rgba(23,63,102,.2));}
+.rena-gallery-art::after{inset:10% 12% auto 12%;height:42%;background:linear-gradient(180deg,rgba(200,179,155,.26),rgba(255,250,241,.06));}
+.rena-map-wrap{border:1px solid rgba(200,179,155,.65);background:var(--white);padding:0;}
+.rena-map-card{position:relative;height:260px;min-height:260px;border:12px solid var(--white);background:var(--white);overflow:hidden;}
+.rena-map-card svg{width:100%;height:100%;display:block;}
+.rena-map-note{margin:.85rem 1.2rem 1.2rem;font-size:.82rem;color:var(--soft);line-height:1.65;}
+.rena-info-block{background:var(--white);border:1px solid rgba(200,179,155,.65);padding:1.25rem 1.4rem;}
+.rena-info-label{font-size:.62rem;text-transform:uppercase;letter-spacing:.2em;color:var(--terracotta);margin-bottom:.5rem;}
+.rena-info-block p{font-size:.88rem;color:var(--soft);line-height:1.65;margin-bottom:.35rem;}
+.rena-info-block p:last-child{margin-bottom:0;}
+.rena-info-block a{color:var(--terracotta);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;border-bottom:.5px solid rgba(23,63,102,.35);padding-bottom:1px;}
+.rena-info-block a:hover{opacity:.7;}
+
+/* ISCHIA CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem;}
+.icard{background:var(--white);border:1px solid rgba(200,179,155,.65);padding:1.6rem 1.7rem;transition:transform .3s;}
+.icard:hover{transform:translateY(-3px);}
+.icard-icon{font-size:1.3rem;margin-bottom:.75rem;display:block;}
+.icard h3{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:.4rem;}
+.icard p{font-size:.88rem;color:var(--soft);line-height:1.65;}
+
+/* TRAVEL */
+.travel-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:3rem;align-items:start;}
+.travel-block h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:var(--ink);margin-bottom:1.4rem;padding-bottom:.75rem;border-bottom:.5px solid var(--sand);}
+.t-item{margin-bottom:1.5rem;}
+.t-label{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);margin-bottom:.3rem;}
+.t-item p{font-size:.9rem;color:var(--soft);line-height:1.7;}
+.stay-tag{display:inline-block;font-size:.61rem;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .6rem;border:1px solid;margin-right:.4rem;margin-bottom:.45rem;}
+.stay-tag.lux{border-color:var(--terracotta);color:var(--terracotta);}
+.stay-tag.mid{border-color:var(--sage);color:var(--sage);}
+.stay-tag.bud{border-color:var(--soft);color:var(--soft);}
+.tip-strip{margin-top:3rem;padding:1.75rem 2rem;background:var(--ivory);border:1px solid rgba(200,179,155,.65);border-left:3px solid var(--terracotta);}
+.tip-strip h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;margin-bottom:.4rem;}
+.tip-strip p{font-size:.9rem;color:var(--soft);line-height:1.7;}
+
+/* RSVP - light version */
+.rsvp-section{background:var(--parchment);}
+.rsvp-wrap{max-width:720px;margin:0 auto;}
+.rsvp-card{background:var(--white);border:1px solid rgba(200,179,155,.75);padding:2.5rem 2rem;margin-top:2.5rem;box-shadow:0 12px 45px rgba(18,43,71,.05);}
+.rsvp-form{display:grid;gap:1rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-field{display:grid;gap:.4rem;}
+.form-field label{font-size:.65rem;text-transform:uppercase;letter-spacing:.18em;color:var(--soft);}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:.85rem 1rem;border:1px solid rgba(200,179,155,.8);background:var(--cream);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:.95rem;font-weight:300;outline:none;transition:border-color .2s;}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:rgba(23,63,102,.55);}
+.form-field textarea{min-height:100px;resize:vertical;}
+.submit-row{display:flex;justify-content:center;margin-top:.5rem;}
+.rsvp-success{display:none;text-align:center;padding:2rem 1rem;}
+.rsvp-success-title{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-style:italic;color:var(--ink);margin-bottom:.4rem;}
+.rsvp-success-sub{font-size:.88rem;color:var(--soft);}
+
+/* GALLERY */
+.gallery-section{background:var(--ivory);}
+.upload-zone{border:1px dashed rgba(200,179,155,.85);padding:2.75rem 2rem;text-align:center;cursor:pointer;transition:all .3s;margin-bottom:1.75rem;background:var(--cream);}
+.upload-zone:hover,.upload-zone.dragover{border-color:var(--terracotta);background:rgba(23,63,102,.04);}
+.up-icon{font-size:1.4rem;color:var(--sand);margin-bottom:.7rem;display:block;transition:transform .3s;}
+.upload-zone:hover .up-icon{transform:translateY(-4px);}
+.up-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--ink);margin-bottom:.3rem;}
+.up-sub{font-size:.78rem;color:var(--soft);}
+#fileInput{display:none;}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:.85rem;}
+.g-item{position:relative;aspect-ratio:1;overflow:hidden;background:var(--ivory);border:1px solid rgba(200,179,155,.55);}
+.g-item img,.g-item video{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s;}
+.g-item:hover img,.g-item:hover video{transform:scale(1.05);}
+.g-overlay{position:absolute;inset:0;background:rgba(42,28,20,0);display:flex;align-items:flex-end;justify-content:space-between;padding:.6rem;transition:background .3s;}
+.g-item:hover .g-overlay{background:rgba(42,28,20,.45);}
+.g-btn{background:rgba(246,237,217,.93);border:none;padding:.3rem .65rem;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;color:var(--ink);opacity:0;transition:opacity .2s;}
+.g-item:hover .g-btn{opacity:1;}
+.g-btn.del{background:rgba(184,92,56,.9);color:#fff;}
+.g-empty{grid-column:1/-1;text-align:center;padding:3.5rem 2rem;font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;color:var(--soft);opacity:.5;}
+
+/* GIFTS */
+.gifts-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:1.4rem;margin-top:2.5rem;}
+.gift-card{background:var(--white);border:1px solid rgba(200,179,155,.65);padding:1.75rem;display:flex;flex-direction:column;gap:.55rem;transition:transform .3s;}
+.gift-card:hover{transform:translateY(-3px);}
+.gift-cat{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terracotta);}
+.gift-title{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--ink);}
+.gift-desc{font-size:.87rem;color:var(--soft);line-height:1.65;flex:1;}
+.gift-price{font-family:'Cormorant Garamond',serif;font-size:1rem;font-style:italic;color:var(--terracotta);}
+.gift-link{display:inline-block;margin-top:.25rem;font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink);border-bottom:.5px solid currentColor;padding-bottom:1px;transition:color .2s;align-self:flex-start;}
+.gift-link:hover{color:var(--terracotta);}
+.gift-claimed{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);}
+.honey-box{margin-top:3rem;padding:1.75rem 2rem;background:var(--cream);border:1px solid rgba(200,179,155,.65);border-left:3px solid var(--terracotta);max-width:600px;}
+.honey-box h4{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;margin-bottom:.5rem;}
+.honey-box p{font-size:.9rem;color:var(--soft);line-height:1.7;margin-bottom:.7rem;}
+.bank-ref{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--sage);}
+
+/* FOOTER - light */
+footer{background:var(--ivory);border-top:1px solid rgba(200,179,155,.6);padding:4.5rem 1.5rem 3rem;text-align:center;}
+.footer-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-style:italic;font-weight:300;color:var(--ink);margin-bottom:.5rem;}
+.footer-date{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--soft);opacity:.5;margin-bottom:2rem;}
+.footer-links{display:flex;justify-content:center;gap:2rem;list-style:none;flex-wrap:wrap;margin-bottom:2rem;}
+.footer-links a{font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);opacity:.5;transition:opacity .2s;}
+.footer-links a:hover{opacity:1;}
+.footer-email{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:var(--soft);opacity:.45;}
+.footer-byline{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);opacity:.22;margin-top:2rem;}
+
+@media(max-width:960px){
+  .overview-panel,.travel-grid,.rena-grid{grid-template-columns:1fr;}
+  .overview-item{border-left:none;border-top:1px solid rgba(200,179,155,.45);}
+  .overview-item:first-child{border-top:none;}
+  .cards-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:720px){
+  nav{padding:1rem 1.25rem;}
+  .nav-links{display:none;position:fixed;inset:0;background:rgba(251,246,239,.97);flex-direction:column;justify-content:center;align-items:center;gap:2rem;}
+  .nav-links.open{display:flex;}
+  .nav-links a{font-size:1rem;}
+  .hamburger{display:flex;z-index:1001;}
+  .hero-card{padding:2.5rem 1.5rem;}
+  .hero-subtitle{flex-direction:column;gap:.35rem;line-height:1.25;margin:1.1rem auto 1rem;}
+  .hero-shell{width:18px;height:18px;margin:.05rem 0;}
+  .invite-photo-wrap{margin:1.6rem auto 0;width:min(100%,420px);}
+  .form-row{grid-template-columns:1fr;}
+  .rsvp-card{padding:1.75rem 1.25rem;}
+  section{padding:4rem 1.1rem;}
+  .ischia-layout{display:flex;flex-direction:column;gap:1rem;margin-top:0;}
+  .ischia-copy{display:contents;}
+  .ischia-copy .section-label{order:1;}
+  .ischia-copy .section-title{order:2;margin-bottom:.6rem;}
+  .ischia-illustration{order:3;margin:0 auto .75rem;width:100%;align-items:center;}
+  .ischia-illustration img{width:min(78vw,310px);max-width:310px;}
+  .ischia-copy .section-intro{order:4;font-size:.96rem;line-height:1.7;}
+  .rena-gallery{grid-template-columns:1fr;}
+  .rena-illustration{min-height:0;margin:2rem 0 0;}
+  .rena-party-top{display:none;}
+  .rena-features,.cards-grid{grid-template-columns:1fr;}
+  .cd-item{padding:0 1rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#home" aria-label="Olivia and Megan home"><img src="logo.png" alt="Olivia and Megan shell logo"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#ischia">Ischia</a></li>
+      <li><a href="#rena">The Venue</a></li>
+      <li><a href="#travel">Travel</a></li>
+      <li><a href="#coming-soon">More Info</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-card fade-in visible">
+    <p class="hero-eyebrow">You are warmly invited to celebrate</p>
+    <h1 class="hero-title">Olivia <span>&amp;</span> Megan</h1>
+    <div class="hero-divider">
+      <div class="hero-divider-line"></div>
+      <div class="hero-divider-dot"></div>
+      <div class="hero-divider-line"></div>
+    </div>
+    <p class="hero-subtitle"><span>Friday 4 September 2026</span><span class="hero-shell" aria-hidden="true"></span><span>Rena, Ischia Island, Italy</span></p>
+    <p class="hero-copy">We are getting married in beautiful Ischia, it's actually happening!</p>
+    <p class="hero-copy">Two best friends who fell in love in Italy and are now ready to say <em>''I do''</em>, or better, <em>sì, lo voglio</em>.</p>
+    <p class="hero-copy">We are so excited to celebrate together in this special day. You will find everything you need to know to get started, with more details coming soon.</p>
+    <div class="hero-actions">
+      <a href="#rsvp" class="btn btn-primary">RSVP Now</a>
+    </div>
+    <div class="invite-photo-wrap">
+      <img src="couple-photo.jpeg" alt="Megan and Olivia by the sea">
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW + COUNTDOWN - fully light -->
+<section class="overview">
+  <div class="container">
+    <div class="overview-panel fade-in">
+      <div class="overview-item">
+        <p class="overview-label">Wedding Date</p>
+        <p class="overview-value">Friday<br>4 September 2026</p>
+      </div>
+      <div class="overview-item">
+        <p class="overview-label">Venue</p>
+        <p class="overview-value">Rena Beach Club<br>Ischia, Italy</p>
+      </div>
+    </div>
+    <div class="countdown-wrap fade-in">
+      <div class="cd-item"><span class="cd-num" id="cDays">&mdash;</span><span class="cd-unit">Days</span></div>
+      <div class="cd-item"><span class="cd-num" id="cHours">&mdash;</span><span class="cd-unit">Hours</span></div>
+      <div class="cd-item"><span class="cd-num" id="cMins">&mdash;</span><span class="cd-unit">Minutes</span></div>
+      <div class="cd-item"><span class="cd-num" id="cSecs">&mdash;</span><span class="cd-unit">Seconds</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ISCHIA GUIDE -->
+<section id="ischia" class="ischia-section">
+  <div class="container">
+    <div class="ischia-layout">
+      <div class="ischia-copy fade-in">
+        <p class="section-label">The Island</p>
+        <h2 class="section-title"><em>Ischia, amore mio</em></h2>
+        <p class="section-intro" style="max-width:none;">Ischia is a little slice of Southern magic, known for its beaches, thermal waters, gardens and relaxed Mediterrenean feel. It has got all the romance of the Bay of Naples, but is softer and slower.</p>
+        <p class="section-intro" style="max-width:none;">They certainly take <em>la vita lenta</em> seriously... no rushing, no stress, just good food, priceless golden sunsets, and sea views that make you forget what day it is.</p>
+        <p class="section-intro" style="max-width:none;">We hope you&rsquo;ll fall a little bit in love with the island too: take your time, explore, get lost, listen to the waves, relax and fully embrace your inner <em>isolano</em> while you&rsquo;re here with us.</p>
+      </div>
+      <div class="ischia-illustration fade-in">
+        <img src="ischia-art.png" alt="Illustrated Ischia coastline">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RENA VENUE SECTION -->
+<section id="rena" class="rena-section">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">The Venue</p>
+      <h2 class="section-title"><em>Rena, our dream venue</em></h2>
+    </div>
+    <div class="rena-grid">
+      <div class="rena-body fade-in">
+        <p>It took us a while to find this little hidden gem on the Maronti beach, but the moment we saw it we just knew. This is the one.</p>
+        <p>Since then, we have been putting together all the little details with a lot of love.</p>
+        <p>Get ready to be sun soaked and eat delicious food - yes, we are two very demanding foodies, but you surely know that by now.</p>
+        <p>And when the sun goes down we&rsquo;ll turn up the music and step into full <em>Y2K</em> energy, dancing under the stars like time doesn&rsquo;t exist. Just a gentle reminder for the millennials and the boomers to stretch beforehand.</p>
+        <div class="rena-gallery">
+          <figure class="rena-illustration">
+            <img src="renawedding2.svg" alt="Illustration of the Rena wedding setting">
+          </figure>
+        </div>
+      </div>
+      <div class="rena-aside fade-in">
+        <figure class="rena-party-top">
+          <img src="renaparty.svg" alt="Illustration of the Rena party setting">
+        </figure>
+        <div class="rena-map-wrap">
+          <div class="rena-map-card">
+            <svg viewBox="0 0 520 260" xmlns="http://www.w3.org/2000/svg" aria-label="Map showing Naples, Ischia and Rena">
+              <rect width="520" height="260" fill="#f8f1e4"/>
+              <path d="M52 78 C98 64, 152 64, 202 86 C238 102, 274 98, 304 82 C338 64, 386 62, 448 90 L448 122 C388 100, 342 102, 308 118 C270 136, 228 140, 188 126 C142 110, 96 110, 52 124 Z" fill="rgba(23,63,102,.12)" transform="translate(520 0) scale(-1 1)"/>
+              <path d="M230 172 C260 156, 298 154, 326 166 C345 174, 364 176, 384 170 C398 166, 412 168, 428 178 C408 192, 392 198, 376 200 C354 204, 338 202, 320 194 C296 184, 270 182, 230 192 Z" fill="rgba(200,179,155,.28)" transform="translate(520 0) scale(-1 1)"/>
+              <path d="M108 112 C136 106, 160 108, 182 118" stroke="rgba(18,43,71,.28)" stroke-width="1.2" fill="none" stroke-dasharray="4 5" transform="translate(520 0) scale(-1 1)"/>
+              <path d="M274 190 C240 170, 204 156, 168 136" stroke="rgba(18,43,71,.28)" stroke-width="1.2" fill="none" stroke-dasharray="4 5" transform="translate(520 0) scale(-1 1)"/>
+              <circle cx="368" cy="120" r="6" fill="#173f66"/>
+              <circle cx="244" cy="188" r="6" fill="#476987"/>
+              <circle cx="204" cy="198" r="5" fill="#122b47"/>
+              <line x1="204" y1="198" x2="166" y2="224" stroke="#122b47" stroke-width="1"/>
+              <rect x="340" y="88" width="84" height="24" fill="rgba(255,253,248,.92)"/>
+              <text x="348" y="104" font-size="12" fill="#122b47" style="letter-spacing:.12em;text-transform:uppercase;">Naples</text>
+              <rect x="206" y="154" width="78" height="24" fill="rgba(255,253,248,.92)"/>
+              <text x="214" y="170" font-size="12" fill="#122b47" style="letter-spacing:.12em;text-transform:uppercase;">Ischia</text>
+              <rect x="52" y="214" width="112" height="24" fill="rgba(255,253,248,.92)"/>
+              <text x="60" y="230" font-size="12" fill="#122b47" style="letter-spacing:.12em;text-transform:uppercase;">Rena wedding</text>
+              <defs>
+                <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#cbdbe3"/>
+                  <stop offset="100%" stop-color="#e4eceb"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+          <p class="rena-map-note">A soft guide to the journey: Naples on the mainland, Ischia in the bay, and Rena on Maronti Beach where we will be celebrating.</p>
+        </div>
+        <div class="rena-info-block">
+          <p class="rena-info-label">Address</p>
+          <p><strong>Rena Beach Club &amp; Restaurant</strong></p>
+          <p>Spiaggia dei Maronti, 95<br>80070 Barano d'Ischia, Naples, Italy</p>
+          <p style="margin-top:.7rem;"><a href="https://www.renaischia.com/en/" target="_blank" rel="noopener">renaischia.com &#8599;</a></p>
+        </div>
+        <div class="rena-info-block">
+          <p class="rena-info-label">Getting there</p>
+          <p>Once you arrive on Ischia, Rena is on Maronti Beach in the south of the island. We will share the best final route options and logistics closer to the wedding.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVEL & STAY -->
+<section id="travel">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">Getting There &amp; Staying</p>
+      <h2 class="section-title">Travel <em>Guide</em></h2>
+    </div>
+    <div class="travel-grid fade-in">
+      <div class="travel-block">
+        <h3>Getting to Ischia</h3>
+        <div class="t-item">
+          <p class="t-label">Nearest Airport</p>
+          <p>Fly to <strong>Naples International Airport (NAP)</strong>.</p>
+        </div>
+        <div class="t-item">
+          <p class="t-label">Airport to the Port</p>
+          <p>Take the <strong>Alibus express shuttle</strong> to Naples Molo Beverello port or a taxi. The shuttle stop is directly outside arrivals.</p>
+        </div>
+        <div class="t-item">
+          <p class="t-label">Ferry to Ischia</p>
+          <p>High-speed ferries (Caremar or Alilauro) from Naples to Ischia Porto take <strong>50 minutes</strong>. Book at traghetti.net. Aim for a morning crossing.</p>
+        </div>
+        
+      </div>
+      <div class="travel-block">
+        <h3>Planning Ahead</h3>
+        <div class="t-item">
+          <p class="t-label">Nearest ports</p>
+          <p>Most visitors arrive into <strong>Ischia Porto</strong>, then continue across the island by taxi. Sant'Angelo is also useful for taxi boats to Maronti.</p>
+        </div>
+        <div class="t-item">
+          <p class="t-label">On the island</p>
+          <p>Taxis and local buses make getting around simple, and boat transfers are a lovely option for reaching Maronti Beach. You can rent a car in Ischia, but you can't take one on the ferry from Naples.</p>
+        </div>
+        <div class="t-item">
+          <p class="t-label">Booking early</p>
+          <p>September is a beautiful time to visit, so we recommend looking at flights and ferries as soon as you can.</p>
+        </div>
+        <div class="t-item">
+          <p class="t-label">More details</p>
+          <p>We will share more information on timings, logistics and any recommendations closer to the wedding.</p>
+        </div>
+      </div>
+    </div>
+    <div class="tip-strip fade-in">
+      <h4>Our tip: come from Thursday evening to Sunday</h4>
+      <p>We would recommend coming from Thursday evening to Sunday to make the most of the trip. We will be doing various get-togethers over the weekend which you are very welcome to join, or you can head off on your own little adventures around the island.</p>
+      <p>Speak with us first before booking accommodation because we have a lot of tips and possibly discounts/offers. More info to follow soon!</p>
+    </div>
+  </div>
+</section>
+
+<section id="coming-soon" style="background:var(--ivory);">
+  <div class="container">
+    <div class="fade-in">
+      <p class="section-label">More Information Coming Soon</p>
+      <h2 class="section-title"><em>La dolce vita</em> begins here</h2>
+      <p class="section-intro">We are so excited to share our happiest day with you in Ischia.</p>
+      <p class="section-intro">Having you there would mean the world to us, truly. If you can make the trip, we can&rsquo;t wait to celebrate together. And if not, you&rsquo;ll be very much in our thoughts as we sip a glass of wine barefoot on the beach.</p>
+      <p class="section-intro">Please let us know as soon as you can if you&rsquo;ll be joining us.</p>
+      <p class="section-intro">More details on timings, logistics, and all the little bits are coming very soon... stay tuned &#10024;</p>
+    </div>
+  </div>
+</section>
+
+<!-- RSVP -->
+<section id="rsvp" class="rsvp-section">
+  <div class="container rsvp-wrap">
+    <div class="fade-in">
+      <p class="section-label">Let us know you're coming</p>
+      <h2 class="section-title">RSVP</h2>
+      <p class="section-intro">Please confirm your attendance if you can by <strong>1st May 2026</strong>, or at the very latest by <strong>15th May 2026</strong> - in true Olly and Meg fashion, we do like the thrill of doing things a little last minute and a little over the top! We truly cannot wait to celebrate with you.</p>
+    </div>
+    <div class="rsvp-card fade-in">
+      <form class="rsvp-form" id="rsvpForm">
+        <div class="form-row">
+          <div class="form-field"><label>First Name</label><input type="text" name="firstName" placeholder="Your first name" required></div>
+          <div class="form-field"><label>Last Name</label><input type="text" name="lastName" placeholder="Your last name" required></div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="form-field"><label>Will you join us?</label>
+            <select name="attendance" required>
+              <option value="" disabled selected>Please select</option>
+              <option value="yes">Joyfully accepts</option>
+              <option value="no">Regretfully declines</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field"><label>Likely Stay</label>
+            <select name="stay">
+              <option value="thu-sun">Thursday to Sunday</option>
+              <option value="fri-sat">Friday to Saturday</option>
+              <option value="planning">Still planning</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-field"><label>Dietary Requirements</label><input type="text" name="dietary" placeholder="Any allergies or dietary needs?"></div>
+        <div class="form-field"><label>Song Request</label><input type="text" name="song" placeholder="What will get you on the dance floor?"></div>
+        <div class="form-field"><label>Message for the brides</label><textarea name="message" placeholder="Anything you'd like to say..."></textarea></div>
+        <div class="submit-row"><button type="submit" class="btn btn-primary">Send RSVP</button></div>
+      </form>
+      <div class="rsvp-success" id="rsvpSuccess">
+        <p class="rsvp-success-title">We can't wait to see you there!</p>
+        <p class="rsvp-success-sub">Your RSVP has been submitted. Thank you so much.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-title">Olivia &amp; Megan</p>
+  <p class="footer-date">4 September 2026 &middot; Rena Beach Club, Ischia Island, Italy</p>
+    <ul class="footer-links">
+    <li><a href="#ischia">Ischia</a></li>
+    <li><a href="#rena">Venue</a></li>
+    <li><a href="#travel">Travel</a></li>
+    <li><a href="#coming-soon">More Info</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+  </ul>
+  <p class="footer-email">meganandolivia2026@gmail.com</p>
+  <p class="footer-byline">Made with love &middot; September 2026</p>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 50));
+const ham = document.getElementById('hamburger');
+const navL = document.getElementById('navLinks');
+ham.addEventListener('click', () => navL.classList.toggle('open'));
+navL.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navL.classList.remove('open')));
+
+function tick() {
+  const d = Math.max(0, new Date('2026-09-04T13:00:00+02:00') - new Date());
+  document.getElementById('cDays').textContent  = Math.floor(d / 864e5);
+  document.getElementById('cHours').textContent = Math.floor((d % 864e5) / 36e5);
+  document.getElementById('cMins').textContent  = Math.floor((d % 36e5) / 6e4);
+  document.getElementById('cSecs').textContent  = Math.floor((d % 6e4) / 1e3);
+}
+
+tick();
+setInterval(tick, 1000);
+
+const obs = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    e.target.classList.add('visible');
+    obs.unobserve(e.target);
+  }
+}), { threshold: .08 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = this;
+  const submitButton = form.querySelector('button[type="submit"]');
+  const d = new FormData(form);
+  const attendance = d.get('attendance') === 'yes' ? 'JOYFULLY ACCEPTS' : 'REGRETFULLY DECLINES';
+  const stayLabels = {
+    'thu-sun': 'THURSDAY TO SUNDAY',
+    'fri-sat': 'FRIDAY TO SATURDAY',
+    planning: 'STILL PLANNING'
+  };
+
+  const googleData = new FormData();
+  googleData.append('entry.701930006', d.get('firstName') || '');
+  googleData.append('entry.1447866588', d.get('lastName') || '');
+  googleData.append('entry.289241068', d.get('email') || '');
+  googleData.append('entry.1711522277', attendance);
+  googleData.append('entry.762882467', stayLabels[d.get('stay')] || 'STILL PLANNING');
+  googleData.append('entry.2032629357', d.get('dietary') || '');
+  googleData.append('entry.654461616', d.get('song') || '');
+  googleData.append('entry.2043931431', d.get('message') || '');
+
+  submitButton.disabled = true;
+  submitButton.textContent = 'Sending...';
+
+  fetch('https://docs.google.com/forms/d/e/1FAIpQLSdHGXKwHW6NNEWHM_XvKOiqGzbdmTOUSSFckqISEmxCF1DI8Q/formResponse', {
+    method: 'POST',
+    mode: 'no-cors',
+    body: googleData
+  }).then(() => {
+    form.style.display = 'none';
+    document.getElementById('rsvpSuccess').style.display = 'block';
+  }).catch(() => {
+    submitButton.disabled = false;
+    submitButton.textContent = 'Send RSVP';
+    alert('Sorry, something went wrong. Please try again or email meganandolivia2026@gmail.com.');
+  });
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
